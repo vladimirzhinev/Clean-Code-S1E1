@@ -153,6 +153,7 @@ li>input[type="text"] {
 }
 
 /* Completed */
+/* I am fix this problem couple commits ago */
 .task-through {
   text-decoration: line-through;
   color: #888;
