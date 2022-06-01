@@ -9,7 +9,7 @@
 // Event handling, user interaction is what starts the code execution.
 
 var taskInput = document.getElementById("new-task");//Add a new task.
-var addButton = document.getElementsByTagName("button")[0];//first button
+var addButton = document.querySelector(".addBtn");//first button
 var incompleteTaskHolder = document.getElementById("incomplete-tasks");//ul of #incompleteTasks
 var completedTasksHolder = document.getElementById("completed-tasks");//completed-tasks
 
@@ -33,19 +33,23 @@ var createNewTaskElement = function (taskString) {
   var deleteButtonImg = document.createElement("img");//delete button image
 
   label.innerText = taskString;
-  label.className = 'task';
+  label.className = 'task tasks-title';
 
   //Each elements, needs appending
   checkBox.type = "checkbox";
+  checkBox.className = "checkbox input";
+
   editInput.type = "text";
-  editInput.className = "task";
+  editInput.className = " input-text task input ";
 
   editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
-  editButton.className = "edit";
+  editButton.className = "edit button";
 
-  deleteButton.className = "delete";
+  deleteButton.className = "delete button";
   deleteButtonImg.src = './remove.svg';
   deleteButton.appendChild(deleteButtonImg);
+
+  listItem.className = 'tasks-item';
 
 
   //and appending.
@@ -121,6 +125,7 @@ var taskCompleted = function () {
 
   //Append the task list item to the #completed-tasks
   var listItem = this.parentNode;
+  // listItem.children[1].classList.add('task-through');
   completedTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
 
@@ -133,6 +138,7 @@ var taskIncomplete = function () {
   //When the checkbox is unchecked
   //Append the task list item to the #incompleteTasks.
   var listItem = this.parentNode;
+  // listItem.children[1].classList.remove('task-through');
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 }
@@ -147,7 +153,7 @@ var ajaxRequest = function () {
 
 
 //Set the click handler to the addTask function.
-addButton.onclick = addTask;
+// addButton.onclick = addTask;
 addButton.addEventListener("click", addTask);
 addButton.addEventListener("click", ajaxRequest);
 
