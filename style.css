@@ -142,8 +142,8 @@ img {
   width: 226px;
 }
 
-li>
-input[type="text"] {
+.tasks-item>
+.task {
   width: 226px
 }
 
