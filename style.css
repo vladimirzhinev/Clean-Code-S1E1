@@ -14,7 +14,7 @@
 }
 
 .poster
-img {
+.img {
   width: 100%;
 }
 
@@ -147,13 +147,13 @@ img {
   width: 226px;
 }
 
-.button.delete img {
+.button.delete .img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.button.delete img:hover {
+.button.delete .img:hover {
   transform: rotateZ(0);
 }
 
@@ -165,15 +165,15 @@ img {
 }
 
 /* Edit Task */
-.tasks .tasks-item input[type=text] {
+.tasks .tasks-item .input-text {
   display: none;
 }
 
-.tasks .tasks-item.edit-mode input[type=text] {
+.tasks .tasks-item.edit-mode .input-text {
   display: inline-block;
   width: 224px;
 }
 
-.tasks .tasks-item.edit-mode label {
+.tasks .tasks-item.edit-mode .tasks-title {
   display: none;
 }
